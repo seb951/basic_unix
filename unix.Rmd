@@ -3,7 +3,7 @@ title: "UNIX COMMANDS"
 author: Sébastien Renaut
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
-  html_document:
+  pdf_document:
     highlight: tango
     number_sections: T
     toc: yes
@@ -14,8 +14,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#Unix commands
-##Exploration
+#Exploration commands
 Command | Meaning
 ------------- | ----------------------------------------------------
 `ls` | what's there
@@ -30,14 +29,14 @@ Command | Meaning
 `cd ~ ` | move home 
 `cd /` | move to root    
 
-##General principles  
+#General principles  
 • All commands are short, perform simple tasks & are highly optimized (fast)  
 • Commands can take (many) options  
 • Commands can be combined (the pipe `|`)  
 • Many commands don't require any argument  
 • 'command' -option1 -option2 -optionN... parameter object  
 
-##Look at files
+#The main commands
 Command | Meaning
 ------------- | ----------------------------------------------------
 `echo` |Print message to screen  
@@ -46,11 +45,7 @@ Command | Meaning
 `tail` |Print laste 10 lines to screen    
 `less` |Print file line by line (use arrows + fn arrows to move up/down)
 `sort`|Sort a file
-`uniq`|unique lines in a file
-  
-##Gestion fichiers
-Command | Meaning
-------------- | ----------------------------------------------------
+`uniq`|unique lines in a file  
 `clear` |clear terminal
 `mkdir` |create empty directory  
 `touch` |create empty file  
@@ -72,13 +67,24 @@ Command | Meaning
 `ln` | symbolic link  
 `which`|where is that command
 
-#Regular expressions
+##Text editing
+Command | Meaning
+------------- | ----------------------------------------------------
+`nano` | edit text (whole file loaded in memory)      
+`nano +123` |specify location 
+##Compression
+Command | Meaning
+------------- | ----------------------------------------------------
+`gzip`  |compression/decompression of files  
+`gunzip`  |compression/decompression of files  
+`tar`  |compression/decompression of archives  
+
+##Regular expressions
 Command | Meaning
 ------------- | ----------------------------------------------------
 `grep` -options 'pattern' file #regular expressions  
 
-
-##Tricks
+#Tricks
 Command | Meaning
 ------------- | ----------------------------------------------------
 `>` |the redirect  
@@ -90,32 +96,19 @@ Command | Meaning
 `tab key`| autocomplete
 `alias` |create own commands  
 
-##Combining commands
+#Combining commands
 • Let's look at the file `examples/sequence.fasta`  
 • print line 17 piping `head` and `tail`  
 • Count lines starting with '>'  
 • Count unique lines starting with '>'  
 
-##Text editing
-Command | Meaning
-------------- | ----------------------------------------------------
-`nano` | edit text (whole file loaded in memory)      
-`nano +123` |specify location  
-
-##Profile
+#Profile
 • Let's look at .bash_profile  (e.g. `nano ~/.bash_profile`)     
 
-##Compression
-Command | Meaning
-------------- | ----------------------------------------------------
-`gzip`  |compression/decompression of files  
-`gunzip`  |compression/decompression of files  
-`tar`  |compression/decompression of archives  
-
-##More
+#More stuff
 `grep` -options 'pattern' file #regular expressions  
 
-##Install and run command line programs
+#Install and run command line programs
 • Let's look at this example:   https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl  
 • It is a short `perl` script that greps sequences in a *.fasta* file  
 • Copy-paste the text in a new file (e.g. `touch fastagrep.pl`,`nano fastagrep.pl`,paste and save)   

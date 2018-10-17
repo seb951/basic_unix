@@ -113,29 +113,24 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#unix-commands"><span class="toc-section-number">1</span> Unix commands</a><ul>
-<li><a href="#exploration"><span class="toc-section-number">1.1</span> Exploration</a></li>
-<li><a href="#general-principles"><span class="toc-section-number">1.2</span> General principles</a></li>
-<li><a href="#look-at-files"><span class="toc-section-number">1.3</span> Look at files</a></li>
-<li><a href="#gestion-fichiers"><span class="toc-section-number">1.4</span> Gestion fichiers</a></li>
+<li><a href="#exploration-commands"><span class="toc-section-number">1</span> Exploration commands</a></li>
+<li><a href="#general-principles"><span class="toc-section-number">2</span> General principles</a></li>
+<li><a href="#the-main-commands"><span class="toc-section-number">3</span> The main commands</a><ul>
+<li><a href="#text-editing"><span class="toc-section-number">3.1</span> Text editing</a></li>
+<li><a href="#compression"><span class="toc-section-number">3.2</span> Compression</a></li>
+<li><a href="#regular-expressions"><span class="toc-section-number">3.3</span> Regular expressions</a></li>
 </ul></li>
-<li><a href="#regular-expressions"><span class="toc-section-number">2</span> Regular expressions</a><ul>
-<li><a href="#tricks"><span class="toc-section-number">2.1</span> Tricks</a></li>
-<li><a href="#combining-commands"><span class="toc-section-number">2.2</span> Combining commands</a></li>
-<li><a href="#text-editing"><span class="toc-section-number">2.3</span> Text editing</a></li>
-<li><a href="#profile"><span class="toc-section-number">2.4</span> Profile</a></li>
-<li><a href="#compression"><span class="toc-section-number">2.5</span> Compression</a></li>
-<li><a href="#more"><span class="toc-section-number">2.6</span> More</a></li>
-<li><a href="#install-and-run-command-line-programs"><span class="toc-section-number">2.7</span> Install and run command line programs</a></li>
-</ul></li>
-<li><a href="#bash"><span class="toc-section-number">3</span> bash</a></li>
+<li><a href="#tricks"><span class="toc-section-number">4</span> Tricks</a></li>
+<li><a href="#combining-commands"><span class="toc-section-number">5</span> Combining commands</a></li>
+<li><a href="#profile"><span class="toc-section-number">6</span> Profile</a></li>
+<li><a href="#more-stuff"><span class="toc-section-number">7</span> More stuff</a></li>
+<li><a href="#install-and-run-command-line-programs"><span class="toc-section-number">8</span> Install and run command line programs</a></li>
+<li><a href="#bash"><span class="toc-section-number">9</span> bash</a></li>
 </ul>
 </div>
 
-<div id="unix-commands" class="section level1">
-<h1><span class="header-section-number">1</span> Unix commands</h1>
-<div id="exploration" class="section level2">
-<h2><span class="header-section-number">1.1</span> Exploration</h2>
+<div id="exploration-commands" class="section level1">
+<h1><span class="header-section-number">1</span> Exploration commands</h1>
 <table style="width:93%;">
 <colgroup>
 <col width="19%"></col>
@@ -195,16 +190,16 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="general-principles" class="section level2">
-<h2><span class="header-section-number">1.2</span> General principles</h2>
+<div id="general-principles" class="section level1">
+<h1><span class="header-section-number">2</span> General principles</h1>
 <p>• All commands are short, perform simple tasks &amp; are highly optimized (fast)<br />
 • Commands can take (many) options<br />
 • Commands can be combined (the pipe <code>|</code>)<br />
 • Many commands don’t require any argument<br />
 • ‘command’ -option1 -option2 -optionN… parameter object</p>
 </div>
-<div id="look-at-files" class="section level2">
-<h2><span class="header-section-number">1.3</span> Look at files</h2>
+<div id="the-main-commands" class="section level1">
+<h1><span class="header-section-number">3</span> The main commands</h1>
 <table>
 <thead>
 <tr class="header">
@@ -241,11 +236,90 @@ $(document).ready(function () {
 <td><code>uniq</code></td>
 <td>unique lines in a file</td>
 </tr>
+<tr class="even">
+<td><code>clear</code></td>
+<td>clear terminal</td>
+</tr>
+<tr class="odd">
+<td><code>mkdir</code></td>
+<td>create empty directory</td>
+</tr>
+<tr class="even">
+<td><code>touch</code></td>
+<td>create empty file</td>
+</tr>
+<tr class="odd">
+<td><code>mv</code></td>
+<td>move</td>
+</tr>
+<tr class="even">
+<td><code>cp</code></td>
+<td>copy</td>
+</tr>
+<tr class="odd">
+<td><code>rm</code></td>
+<td>careful remove</td>
+</tr>
+<tr class="even">
+<td><code>rmdir</code></td>
+<td><em>careful</em> remove empty directory</td>
+</tr>
+<tr class="odd">
+<td><code>rm -r</code></td>
+<td><em>VERY careful</em>.. remove recursiveLY</td>
+</tr>
+<tr class="even">
+<td><code>chmod</code></td>
+<td>change mode of file</td>
+</tr>
+<tr class="odd">
+<td><code>ssh</code></td>
+<td>secure shell (remote connection)</td>
+</tr>
+<tr class="even">
+<td><code>scp</code></td>
+<td>secure copy (remote connection)</td>
+</tr>
+<tr class="odd">
+<td><code>sudo</code></td>
+<td>superuser do</td>
+</tr>
+<tr class="even">
+<td><code>top</code></td>
+<td>who is running what?</td>
+</tr>
+<tr class="odd">
+<td><code>kill</code></td>
+<td>kill a process</td>
+</tr>
+<tr class="even">
+<td><code>wc</code></td>
+<td>wordcount</td>
+</tr>
+<tr class="odd">
+<td><code>curl</code></td>
+<td>get stuff from web (MACOS native) or <code>wget</code> (MACOS non-native)</td>
+</tr>
+<tr class="even">
+<td><code>history</code></td>
+<td>see recent history</td>
+</tr>
+<tr class="odd">
+<td><code>open</code></td>
+<td>open a file</td>
+</tr>
+<tr class="even">
+<td><code>ln</code></td>
+<td>symbolic link</td>
+</tr>
+<tr class="odd">
+<td><code>which</code></td>
+<td>where is that command</td>
+</tr>
 </tbody>
 </table>
-</div>
-<div id="gestion-fichiers" class="section level2">
-<h2><span class="header-section-number">1.4</span> Gestion fichiers</h2>
+<div id="text-editing" class="section level2">
+<h2><span class="header-section-number">3.1</span> Text editing</h2>
 <table>
 <thead>
 <tr class="header">
@@ -255,91 +329,43 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>clear</code></td>
-<td>clear terminal</td>
+<td><code>nano</code></td>
+<td>edit text (whole file loaded in memory)</td>
 </tr>
 <tr class="even">
-<td><code>mkdir</code></td>
-<td>create empty directory</td>
-</tr>
-<tr class="odd">
-<td><code>touch</code></td>
-<td>create empty file</td>
-</tr>
-<tr class="even">
-<td><code>mv</code></td>
-<td>move</td>
-</tr>
-<tr class="odd">
-<td><code>cp</code></td>
-<td>copy</td>
-</tr>
-<tr class="even">
-<td><code>rm</code></td>
-<td>careful remove</td>
-</tr>
-<tr class="odd">
-<td><code>rmdir</code></td>
-<td><em>careful</em> remove empty directory</td>
-</tr>
-<tr class="even">
-<td><code>rm -r</code></td>
-<td><em>VERY careful</em>.. remove recursiveLY</td>
-</tr>
-<tr class="odd">
-<td><code>chmod</code></td>
-<td>change mode of file</td>
-</tr>
-<tr class="even">
-<td><code>ssh</code></td>
-<td>secure shell (remote connection)</td>
-</tr>
-<tr class="odd">
-<td><code>scp</code></td>
-<td>secure copy (remote connection)</td>
-</tr>
-<tr class="even">
-<td><code>sudo</code></td>
-<td>superuser do</td>
-</tr>
-<tr class="odd">
-<td><code>top</code></td>
-<td>who is running what?</td>
-</tr>
-<tr class="even">
-<td><code>kill</code></td>
-<td>kill a process</td>
-</tr>
-<tr class="odd">
-<td><code>wc</code></td>
-<td>wordcount</td>
-</tr>
-<tr class="even">
-<td><code>curl</code></td>
-<td>get stuff from web (MACOS native) or <code>wget</code> (MACOS non-native)</td>
-</tr>
-<tr class="odd">
-<td><code>history</code></td>
-<td>see recent history</td>
-</tr>
-<tr class="even">
-<td><code>open</code></td>
-<td>open a file</td>
-</tr>
-<tr class="odd">
-<td><code>ln</code></td>
-<td>symbolic link</td>
-</tr>
-<tr class="even">
-<td><code>which</code></td>
-<td>where is that command</td>
+<td><code>nano +123</code></td>
+<td>specify location</td>
 </tr>
 </tbody>
 </table>
 </div>
+<div id="compression" class="section level2">
+<h2><span class="header-section-number">3.2</span> Compression</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>gzip</code></td>
+<td>compression/decompression of files</td>
+</tr>
+<tr class="even">
+<td><code>gunzip</code></td>
+<td>compression/decompression of files</td>
+</tr>
+<tr class="odd">
+<td><code>tar</code></td>
+<td>compression/decompression of archives</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="regular-expressions" class="section level1">
-<h1><span class="header-section-number">2</span> Regular expressions</h1>
+<div id="regular-expressions" class="section level2">
+<h2><span class="header-section-number">3.3</span> Regular expressions</h2>
 <table>
 <thead>
 <tr class="header">
@@ -351,8 +377,10 @@ $(document).ready(function () {
 </tbody>
 </table>
 <p><code>grep</code> -options ‘pattern’ file #regular expressions</p>
-<div id="tricks" class="section level2">
-<h2><span class="header-section-number">2.1</span> Tricks</h2>
+</div>
+</div>
+<div id="tricks" class="section level1">
+<h1><span class="header-section-number">4</span> Tricks</h1>
 <table>
 <thead>
 <tr class="header">
@@ -396,69 +424,23 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="combining-commands" class="section level2">
-<h2><span class="header-section-number">2.2</span> Combining commands</h2>
+<div id="combining-commands" class="section level1">
+<h1><span class="header-section-number">5</span> Combining commands</h1>
 <p>• Let’s look at the file <code>examples/sequence.fasta</code><br />
 • print line 17 piping <code>head</code> and <code>tail</code><br />
 • Count lines starting with ‘&gt;’<br />
 • Count unique lines starting with ‘&gt;’</p>
 </div>
-<div id="text-editing" class="section level2">
-<h2><span class="header-section-number">2.3</span> Text editing</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>nano</code></td>
-<td>edit text (whole file loaded in memory)</td>
-</tr>
-<tr class="even">
-<td><code>nano +123</code></td>
-<td>specify location</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="profile" class="section level2">
-<h2><span class="header-section-number">2.4</span> Profile</h2>
+<div id="profile" class="section level1">
+<h1><span class="header-section-number">6</span> Profile</h1>
 <p>• Let’s look at .bash_profile (e.g. <code>nano ~/.bash_profile</code>)</p>
 </div>
-<div id="compression" class="section level2">
-<h2><span class="header-section-number">2.5</span> Compression</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>gzip</code></td>
-<td>compression/decompression of files</td>
-</tr>
-<tr class="even">
-<td><code>gunzip</code></td>
-<td>compression/decompression of files</td>
-</tr>
-<tr class="odd">
-<td><code>tar</code></td>
-<td>compression/decompression of archives</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="more" class="section level2">
-<h2><span class="header-section-number">2.6</span> More</h2>
+<div id="more-stuff" class="section level1">
+<h1><span class="header-section-number">7</span> More stuff</h1>
 <p><code>grep</code> -options ‘pattern’ file #regular expressions</p>
 </div>
-<div id="install-and-run-command-line-programs" class="section level2">
-<h2><span class="header-section-number">2.7</span> Install and run command line programs</h2>
+<div id="install-and-run-command-line-programs" class="section level1">
+<h1><span class="header-section-number">8</span> Install and run command line programs</h1>
 <p>• Let’s look at this example: <a href="https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl" class="uri">https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl</a><br />
 • It is a short <code>perl</code> script that greps sequences in a <em>.fasta</em> file<br />
 • Copy-paste the text in a new file (e.g. <code>touch fastagrep.pl</code>,<code>nano fastagrep.pl</code>,paste and save)<br />
@@ -467,9 +449,8 @@ $(document).ready(function () {
 • Let’s try it (<code>./fastagrep.pl 'deserticola' examples/sequence.fasta</code>)<br />
 • Let’s symbolic link it so the computer knows where to find it (<code>ln /Users/jerry/Dropbox/CSBQ/workshop/unix_workshop_2018/fastagrep.pl /usr/local/bin/fastagrep.pl</code>)</p>
 </div>
-</div>
 <div id="bash" class="section level1">
-<h1><span class="header-section-number">3</span> bash</h1>
+<h1><span class="header-section-number">9</span> bash</h1>
 <p><code>bash</code> (let’s look at an example <code>less examples/bash_cmd2</code>)</p>
 </div>
 
