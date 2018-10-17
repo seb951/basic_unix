@@ -1,0 +1,131 @@
+---
+title: "UNIX COMMANDS"
+author: Sébastien Renaut
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: 
+  html_document:
+    highlight: tango
+    number_sections: T
+    toc: yes
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Unix commands
+##Exploration
+Command | Meaning
+------------- | ----------------------------------------------------
+`ls` | what's there
+`ls -1` | with an option 
+`ls -t -h` | with more options  
+`ls -thor` | with even more options
+`man ls` | what are the options (q = quit; d = next page; ; arrows = scrolling; h = list of all possible commands)  
+`pwd`| where are we  
+`cd` | move somewhere else (default to home)   
+`cd ..` | move back  
+`cd ../Applications` | move back, then forward  
+`cd ~ ` | move home 
+`cd /` | move to root    
+
+##General principles  
+• All commands are short, perform simple tasks & are highly optimized (fast)  
+• Commands can take (many) options  
+• Commands can be combined (the pipe `|`)  
+• Many commands don't require any argument  
+• 'command' -option1 -option2 -optionN... parameter object  
+
+##Look at files
+Command | Meaning
+------------- | ----------------------------------------------------
+`echo` |Print message to screen  
+`cat` |Print file content to screen  
+`head` |Print first 10 lines to screen  
+`tail` |Print laste 10 lines to screen    
+`less` |Print file line by line (use arrows + fn arrows to move up/down)
+`sort`|Sort a file
+`uniq`|unique lines in a file
+  
+##Gestion fichiers
+Command | Meaning
+------------- | ----------------------------------------------------
+`clear` |clear terminal
+`mkdir` |create empty directory  
+`touch` |create empty file  
+`mv` |move  
+`cp` |copy  
+`rm` |careful remove  
+`rmdir` |*careful* remove empty directory  
+`rm -r` |*VERY careful*.. remove recursiveLY  
+`chmod` |change mode of file  
+`ssh` |secure shell (remote connection)  
+`scp`  |secure copy (remote connection)  
+`sudo` |superuser do  
+`top` |who is running what?
+`kill` |kill a process   
+`wc` |wordcount
+`curl` |get stuff from web (MACOS native) or `wget` (MACOS non-native)  
+`history` |see recent history     
+`open` | open a file   
+`ln` | symbolic link  
+`which`|where is that command
+
+#Regular expressions
+Command | Meaning
+------------- | ----------------------------------------------------
+`grep` -options 'pattern' file #regular expressions  
+
+
+##Tricks
+Command | Meaning
+------------- | ----------------------------------------------------
+`>` |the redirect  
+`|` |the pipe   
+`*` |anything (special character: for literal `*`, use `\*`)  
+`?` |anyone character (special character)  
+`Ctrl+A` |go to beginning of line in terminal    
+`Ctrl+E` |end of line    
+`tab key`| autocomplete
+`alias` |create own commands  
+
+##Combining commands
+• Let's look at the file `examples/sequence.fasta`  
+• print line 17 piping `head` and `tail`  
+• Count lines starting with '>'  
+• Count unique lines starting with '>'  
+
+##Text editing
+Command | Meaning
+------------- | ----------------------------------------------------
+`nano` | edit text (whole file loaded in memory)      
+`nano +123` |specify location  
+
+##Profile
+• Let's look at .bash_profile  (e.g. `nano ~/.bash_profile`)     
+
+##Compression
+Command | Meaning
+------------- | ----------------------------------------------------
+`gzip`  |compression/decompression of files  
+`gunzip`  |compression/decompression of files  
+`tar`  |compression/decompression of archives  
+
+##More
+`grep` -options 'pattern' file #regular expressions  
+
+##Install and run command line programs
+• Let's look at this example:   https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl  
+• It is a short `perl` script that greps sequences in a *.fasta* file  
+• Copy-paste the text in a new file (e.g. `touch fastagrep.pl`,`nano fastagrep.pl`,paste and save)   
+• Make it executable (`chmod +x`)    
+• Let's look at it (`./fastagrep.pl`)  
+• Let's try it (`./fastagrep.pl 'deserticola' examples/sequence.fasta`)  
+• Let's symbolic link it so the computer knows where to find it (` ln /Users/jerry/Dropbox/CSBQ/workshop/unix_workshop_2018/fastagrep.pl /usr/local/bin/fastagrep.pl`)  
+  
+#bash
+`bash`  (let's look at an example `less examples/bash_cmd2`)
+
+
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+mkdir bash_results
+
+
+for file in *
+do
+        wc $file >bash_results/wc_$file
+done
+
+
+var="Hello World!"
+echo $var
+
+
