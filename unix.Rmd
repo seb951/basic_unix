@@ -3,7 +3,7 @@ title: "UNIX COMMANDS"
 author: Sébastien Renaut
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
-  pdf_document:
+  html_document:
     highlight: tango
     number_sections: T
     toc: yes
@@ -71,13 +71,16 @@ Command | Meaning
 Command | Meaning
 ------------- | ----------------------------------------------------
 `nano` | edit text (whole file loaded in memory)      
-`nano +123` |specify location 
+`nano +123` |specify location  
+
 ##Compression
 Command | Meaning
 ------------- | ----------------------------------------------------
 `gzip`  |compression/decompression of files  
+`gzip -cd file.gz`  |decompress to standard out (use a `>` redirect) 
 `gunzip`  |compression/decompression of files  
 `tar`  |compression/decompression of archives  
+`tar -xvzf file tar.gz` |decompress a tar.gz (tarball)  
 
 ##Regular expressions
 Command | Meaning
