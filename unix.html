@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sébastien Renaut" />
 
-<meta name="date" content="2018-10-17" />
+<meta name="date" content="2018-10-18" />
 
 <title>UNIX COMMANDS</title>
 
@@ -107,30 +107,30 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">UNIX COMMANDS</h1>
 <h4 class="author"><em>Sébastien Renaut</em></h4>
-<h4 class="date"><em>October 17, 2018</em></h4>
+<h4 class="date"><em>October 18, 2018</em></h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#exploration-commands"><span class="toc-section-number">1</span> Exploration commands</a></li>
-<li><a href="#general-principles"><span class="toc-section-number">2</span> General principles</a></li>
-<li><a href="#the-main-commands"><span class="toc-section-number">3</span> The main commands</a><ul>
-<li><a href="#text-editing"><span class="toc-section-number">3.1</span> Text editing</a></li>
-<li><a href="#compression"><span class="toc-section-number">3.2</span> Compression</a></li>
-<li><a href="#regular-expressions"><span class="toc-section-number">3.3</span> Regular expressions</a></li>
-</ul></li>
-<li><a href="#tricks"><span class="toc-section-number">4</span> Tricks</a></li>
-<li><a href="#combining-commands"><span class="toc-section-number">5</span> Combining commands</a></li>
-<li><a href="#profile"><span class="toc-section-number">6</span> Profile</a></li>
-<li><a href="#more-stuff"><span class="toc-section-number">7</span> More stuff</a></li>
-<li><a href="#install-and-run-command-line-programs"><span class="toc-section-number">8</span> Install and run command line programs</a></li>
-<li><a href="#bash"><span class="toc-section-number">9</span> bash</a></li>
+<li><a href="#exploration-commands">Exploration commands</a></li>
+<li><a href="#general-principles">General principles</a></li>
+<li><a href="#moving-removing-creating-files">Moving / removing / creating files</a></li>
+<li><a href="#examining-files">Examining files</a></li>
+<li><a href="#tricks">Tricks</a></li>
+<li><a href="#working-remotely">Working remotely</a></li>
+<li><a href="#other-useful-commands">Other useful commands</a></li>
+<li><a href="#profile">Profile</a></li>
+<li><a href="#compression">Compression</a></li>
+<li><a href="#regular-expressions">Regular expressions</a></li>
+<li><a href="#combining-commands">Combining commands</a></li>
+<li><a href="#install-and-run-command-line-programs">Install and run command line programs</a></li>
+<li><a href="#bash">bash</a></li>
 </ul>
 </div>
 
 <div id="exploration-commands" class="section level1">
-<h1><span class="header-section-number">1</span> Exploration commands</h1>
+<h1>Exploration commands</h1>
 <table style="width:93%;">
 <colgroup>
 <col width="19%"></col>
@@ -157,15 +157,15 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td><code>ls -thor</code></td>
-<td>with even more options</td>
+<td>combining even more options</td>
 </tr>
 <tr class="odd">
 <td><code>man ls</code></td>
-<td>what are the options (q = quit; d = next page; ; arrows = scrolling; h = list of all possible commands)</td>
+<td>manual: what are the options (q = quit; d = next page; ; arrows &amp; fn arrows = scrolling)</td>
 </tr>
 <tr class="even">
 <td><code>pwd</code></td>
-<td>where are we</td>
+<td>where are we (full path)</td>
 </tr>
 <tr class="odd">
 <td><code>cd</code></td>
@@ -191,15 +191,15 @@ $(document).ready(function () {
 </table>
 </div>
 <div id="general-principles" class="section level1">
-<h1><span class="header-section-number">2</span> General principles</h1>
+<h1>General principles</h1>
 <p>• All commands are short, perform simple tasks &amp; are highly optimized (fast)<br />
-• Commands can take (many) options<br />
+• Nearly all commands and options (~99%) work across Unix-based OS • Commands can take (many) options<br />
 • Commands can be combined (the pipe <code>|</code>)<br />
-• Many commands don’t require any argument<br />
-• ‘command’ -option1 -option2 -optionN… parameter object</p>
+• Many commands don’t require any argument, some do<br />
+• <code>command -option1 -option2 -optionN... parameter object</code> • Many commands write output to terminal (redirected using <code>&gt;</code>)</p>
 </div>
-<div id="the-main-commands" class="section level1">
-<h1><span class="header-section-number">3</span> The main commands</h1>
+<div id="moving-removing-creating-files" class="section level1">
+<h1>Moving / removing / creating files</h1>
 <table>
 <thead>
 <tr class="header">
@@ -208,46 +208,6 @@ $(document).ready(function () {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><code>echo</code></td>
-<td>Print message to screen</td>
-</tr>
-<tr class="even">
-<td><code>cat</code></td>
-<td>Print file content to screen</td>
-</tr>
-<tr class="odd">
-<td><code>head</code></td>
-<td>Print first 10 lines to screen</td>
-</tr>
-<tr class="even">
-<td><code>tail</code></td>
-<td>Print laste 10 lines to screen</td>
-</tr>
-<tr class="odd">
-<td><code>less</code></td>
-<td>Print file line by line (use arrows + fn arrows to move up/down)</td>
-</tr>
-<tr class="even">
-<td><code>sort</code></td>
-<td>Sort a file</td>
-</tr>
-<tr class="odd">
-<td><code>uniq</code></td>
-<td>unique lines in a file</td>
-</tr>
-<tr class="even">
-<td><code>clear</code></td>
-<td>clear terminal</td>
-</tr>
-<tr class="odd">
-<td><code>mkdir</code></td>
-<td>create empty directory</td>
-</tr>
-<tr class="even">
-<td><code>touch</code></td>
-<td>create empty file</td>
-</tr>
 <tr class="odd">
 <td><code>mv</code></td>
 <td>move</td>
@@ -266,12 +226,123 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td><code>rm -r</code></td>
-<td><em>VERY careful</em>.. remove recursiveLY</td>
+<td><em>VERY careful</em>.. remove recursively</td>
 </tr>
 <tr class="even">
-<td><code>chmod</code></td>
-<td>change mode of file</td>
+<td><code>mkdir</code></td>
+<td>create empty directory</td>
 </tr>
+<tr class="odd">
+<td><code>touch</code></td>
+<td>create empty file</td>
+</tr>
+<tr class="even">
+<td><code>echo</code></td>
+<td>Print message to screen</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="examining-files" class="section level1">
+<h1>Examining files</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>head</code></td>
+<td>Print first 10 lines to screen</td>
+</tr>
+<tr class="even">
+<td><code>tail</code></td>
+<td>Print laste 10 lines to screen</td>
+</tr>
+<tr class="odd">
+<td><code>less</code></td>
+<td>Print file line by line (use arrows + fn arrows to move up/down)</td>
+</tr>
+<tr class="even">
+<td><code>cat</code></td>
+<td>Print file content to screen</td>
+</tr>
+<tr class="odd">
+<td><code>sort</code></td>
+<td>Sort a file</td>
+</tr>
+<tr class="even">
+<td><code>uniq</code></td>
+<td>unique lines in a file</td>
+</tr>
+<tr class="odd">
+<td><code>clear</code></td>
+<td>clear terminal</td>
+</tr>
+<tr class="even">
+<td><code>wc</code></td>
+<td>wordcount</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tricks" class="section level1">
+<h1>Tricks</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>the redirect</td>
+</tr>
+<tr class="even">
+<td><code>&gt;&gt;</code></td>
+<td>the redirect (append to file)</td>
+</tr>
+<tr class="odd">
+<td><code>|</code></td>
+<td>the pipe</td>
+</tr>
+<tr class="even">
+<td><code>*</code></td>
+<td>anything (special character: for literal <code>*</code>, use <code>\*</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>?</code></td>
+<td>anyone character (special character)</td>
+</tr>
+<tr class="even">
+<td><code>Ctrl+A</code></td>
+<td>go to beginning of line in terminal</td>
+</tr>
+<tr class="odd">
+<td><code>Ctrl+E</code></td>
+<td>end of line</td>
+</tr>
+<tr class="even">
+<td><code>tab key</code></td>
+<td>autocomplete</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="working-remotely" class="section level1">
+<h1>Working remotely</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
 <td><code>ssh</code></td>
 <td>secure shell (remote connection)</td>
@@ -280,21 +351,34 @@ $(document).ready(function () {
 <td><code>scp</code></td>
 <td>secure copy (remote connection)</td>
 </tr>
+</tbody>
+</table>
+</div>
+<div id="other-useful-commands" class="section level1">
+<h1>Other useful commands</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
+<td><code>chmod</code></td>
+<td>change mode of file</td>
+</tr>
+<tr class="even">
 <td><code>sudo</code></td>
 <td>superuser do</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>top</code></td>
 <td>who is running what?</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>kill</code></td>
 <td>kill a process</td>
-</tr>
-<tr class="even">
-<td><code>wc</code></td>
-<td>wordcount</td>
 </tr>
 <tr class="odd">
 <td><code>curl</code></td>
@@ -314,20 +398,12 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td><code>which</code></td>
-<td>where is that command</td>
+<td>where is the command</td>
 </tr>
-</tbody>
-</table>
-<div id="text-editing" class="section level2">
-<h2><span class="header-section-number">3.1</span> Text editing</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Meaning</th>
+<tr class="even">
+<td><code>alias</code></td>
+<td>create own commands</td>
 </tr>
-</thead>
-<tbody>
 <tr class="odd">
 <td><code>nano</code></td>
 <td>edit text (whole file loaded in memory)</td>
@@ -339,8 +415,12 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="compression" class="section level2">
-<h2><span class="header-section-number">3.2</span> Compression</h2>
+<div id="profile" class="section level1">
+<h1>Profile</h1>
+<p>• Let’s look at .bash_profile to modify options (e.g. <code>nano ~/.bash_profile</code>)</p>
+</div>
+<div id="compression" class="section level1">
+<h1>Compression</h1>
 <table>
 <thead>
 <tr class="header">
@@ -372,23 +452,8 @@ $(document).ready(function () {
 </tbody>
 </table>
 </div>
-<div id="regular-expressions" class="section level2">
-<h2><span class="header-section-number">3.3</span> Regular expressions</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<p><code>grep</code> -options ‘pattern’ file #regular expressions</p>
-</div>
-</div>
-<div id="tricks" class="section level1">
-<h1><span class="header-section-number">4</span> Tricks</h1>
+<div id="regular-expressions" class="section level1">
+<h1>Regular expressions</h1>
 <table>
 <thead>
 <tr class="header">
@@ -398,57 +463,21 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>&gt;</code></td>
-<td>the redirect</td>
-</tr>
-<tr class="even">
-<td><code>|</code></td>
-<td>the pipe</td>
-</tr>
-<tr class="odd">
-<td><code>*</code></td>
-<td>anything (special character: for literal <code>*</code>, use <code>\*</code>)</td>
-</tr>
-<tr class="even">
-<td><code>?</code></td>
-<td>anyone character (special character)</td>
-</tr>
-<tr class="odd">
-<td><code>Ctrl+A</code></td>
-<td>go to beginning of line in terminal</td>
-</tr>
-<tr class="even">
-<td><code>Ctrl+E</code></td>
-<td>end of line</td>
-</tr>
-<tr class="odd">
-<td><code>tab key</code></td>
-<td>autocomplete</td>
-</tr>
-<tr class="even">
-<td><code>alias</code></td>
-<td>create own commands</td>
+<td><code>grep</code> -options ‘pattern’ file</td>
+<td>#regular expressions</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="combining-commands" class="section level1">
-<h1><span class="header-section-number">5</span> Combining commands</h1>
+<h1>Combining commands</h1>
 <p>• Let’s look at the file <code>examples/sequence.fasta</code><br />
 • print line 17 piping <code>head</code> and <code>tail</code><br />
 • Count lines starting with ‘&gt;’<br />
 • Count unique lines starting with ‘&gt;’</p>
 </div>
-<div id="profile" class="section level1">
-<h1><span class="header-section-number">6</span> Profile</h1>
-<p>• Let’s look at .bash_profile (e.g. <code>nano ~/.bash_profile</code>)</p>
-</div>
-<div id="more-stuff" class="section level1">
-<h1><span class="header-section-number">7</span> More stuff</h1>
-<p><code>grep</code> -options ‘pattern’ file #regular expressions</p>
-</div>
 <div id="install-and-run-command-line-programs" class="section level1">
-<h1><span class="header-section-number">8</span> Install and run command line programs</h1>
+<h1>Install and run command line programs</h1>
 <p>• Let’s look at this example: <a href="https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl" class="uri">https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl</a><br />
 • It is a short <code>perl</code> script that greps sequences in a <em>.fasta</em> file<br />
 • Copy-paste the text in a new file (e.g. <code>touch fastagrep.pl</code>,<code>nano fastagrep.pl</code>,paste and save)<br />
@@ -458,7 +487,7 @@ $(document).ready(function () {
 • Let’s symbolic link it so the computer knows where to find it (<code>ln /Users/jerry/Dropbox/CSBQ/workshop/unix_workshop_2018/fastagrep.pl /usr/local/bin/fastagrep.pl</code>)</p>
 </div>
 <div id="bash" class="section level1">
-<h1><span class="header-section-number">9</span> bash</h1>
+<h1>bash</h1>
 <p><code>bash</code> (let’s look at an example <code>less examples/bash_cmd2</code>)</p>
 </div>
 

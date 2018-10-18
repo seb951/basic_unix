@@ -80,7 +80,7 @@ Command | Meaning
 `ssh` |secure shell (remote connection)  
 `scp`  |secure copy (remote connection)  
 
-#Others
+#Other useful commands
 Command | Meaning
 ------------- | ----------------------------------------------------
 `chmod` |change mode of file
@@ -96,7 +96,7 @@ Command | Meaning
 `nano` | edit text (whole file loaded in memory)      
 `nano +123` |specify location  
 
-##Profile
+#Profile
 • Let's look at .bash_profile to modify options (e.g. `nano ~/.bash_profile`)
 
 #Compression
@@ -111,7 +111,7 @@ Command | Meaning
 #Regular expressions
 Command | Meaning
 ------------- | ----------------------------------------------------
-`grep` -options 'pattern' file #regular expressions  
+`grep` -options 'pattern' file |#regular expressions  
 
 #Combining commands
 • Let's look at the file `examples/sequence.fasta`  
