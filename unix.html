@@ -113,7 +113,7 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#exploration-commands">Exploration commands</a></li>
+<li><a href="#exploration">Exploration</a></li>
 <li><a href="#general-principles">General principles</a></li>
 <li><a href="#moving-removing-creating-files">Moving / removing / creating files</a></li>
 <li><a href="#examining-files">Examining files</a></li>
@@ -123,14 +123,14 @@ $(document).ready(function () {
 <li><a href="#profile">Profile</a></li>
 <li><a href="#compression">Compression</a></li>
 <li><a href="#regular-expressions">Regular expressions</a></li>
-<li><a href="#combining-commands">Combining commands</a></li>
+<li><a href="#combining-commands-example">Combining commands: example</a></li>
 <li><a href="#install-and-run-command-line-programs">Install and run command line programs</a></li>
 <li><a href="#bash">bash</a></li>
 </ul>
 </div>
 
-<div id="exploration-commands" class="section level1">
-<h1>Exploration commands</h1>
+<div id="exploration" class="section level1">
+<h1>Exploration</h1>
 <table style="width:93%;">
 <colgroup>
 <col width="19%"></col>
@@ -161,7 +161,7 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td><code>man ls</code></td>
-<td>manual: what are the options (q = quit; d = next page; ; arrows &amp; fn arrows = scrolling)</td>
+<td>how to run command (q = quit; d = next page; ; arrows &amp; fn arrows = scrolling)</td>
 </tr>
 <tr class="even">
 <td><code>pwd</code></td>
@@ -193,10 +193,12 @@ $(document).ready(function () {
 <div id="general-principles" class="section level1">
 <h1>General principles</h1>
 <p>• All commands are short, perform simple tasks &amp; are highly optimized (fast)<br />
-• Nearly all commands and options (~99%) work across Unix-based OS • Commands can take (many) options<br />
-• Commands can be combined (the pipe <code>|</code>)<br />
+• Nearly all commands and options (~99%) work across Unix-based OS<br />
+• Commands can take (many) options<br />
+• Commands can be combined (more later)<br />
 • Many commands don’t require any argument, some do<br />
-• <code>command -option1 -option2 -optionN... parameter object</code> • Many commands write output to terminal (redirected using <code>&gt;</code>)</p>
+• <code>command -option1 -option2 -optionN... parameter object</code><br />
+• Many commands output directly to terminal</p>
 </div>
 <div id="moving-removing-creating-files" class="section level1">
 <h1>Moving / removing / creating files</h1>
@@ -218,15 +220,15 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td><code>rm</code></td>
-<td>careful remove</td>
+<td><strong>careful</strong> remove</td>
 </tr>
 <tr class="even">
 <td><code>rmdir</code></td>
-<td><em>careful</em> remove empty directory</td>
+<td><strong>careful</strong> remove empty directory</td>
 </tr>
 <tr class="odd">
 <td><code>rm -r</code></td>
-<td><em>VERY careful</em>.. remove recursively</td>
+<td><strong>VERY careful</strong>.. remove recursively</td>
 </tr>
 <tr class="even">
 <td><code>mkdir</code></td>
@@ -238,7 +240,7 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td><code>echo</code></td>
-<td>Print message to screen</td>
+<td>print message to screen</td>
 </tr>
 </tbody>
 </table>
@@ -255,23 +257,23 @@ $(document).ready(function () {
 <tbody>
 <tr class="odd">
 <td><code>head</code></td>
-<td>Print first 10 lines to screen</td>
+<td>print first 10 lines to screen</td>
 </tr>
 <tr class="even">
 <td><code>tail</code></td>
-<td>Print laste 10 lines to screen</td>
+<td>print last 10 lines to screen</td>
 </tr>
 <tr class="odd">
 <td><code>less</code></td>
-<td>Print file line by line (use arrows + fn arrows to move up/down)</td>
+<td>print file line by line (use arrows + fn arrows to move up/down)</td>
 </tr>
 <tr class="even">
 <td><code>cat</code></td>
-<td>Print file content to screen</td>
+<td>print file content to screen</td>
 </tr>
 <tr class="odd">
 <td><code>sort</code></td>
-<td>Sort a file</td>
+<td>sort a file</td>
 </tr>
 <tr class="even">
 <td><code>uniq</code></td>
@@ -300,15 +302,15 @@ $(document).ready(function () {
 <tbody>
 <tr class="odd">
 <td><code>&gt;</code></td>
-<td>the redirect</td>
+<td>redirect</td>
 </tr>
 <tr class="even">
 <td><code>&gt;&gt;</code></td>
-<td>the redirect (append to file)</td>
+<td>append to file</td>
 </tr>
 <tr class="odd">
 <td><code>|</code></td>
-<td>the pipe</td>
+<td>pipe</td>
 </tr>
 <tr class="even">
 <td><code>*</code></td>
@@ -316,7 +318,7 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td><code>?</code></td>
-<td>anyone character (special character)</td>
+<td>any character (special character)</td>
 </tr>
 <tr class="even">
 <td><code>Ctrl+A</code></td>
@@ -374,7 +376,7 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td><code>top</code></td>
-<td>who is running what?</td>
+<td>what’s running</td>
 </tr>
 <tr class="even">
 <td><code>kill</code></td>
@@ -463,32 +465,32 @@ $(document).ready(function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>grep</code> -options ‘pattern’ file</td>
-<td>#regular expressions</td>
+<td><code>grep</code></td>
+<td>regular expressions</td>
 </tr>
 </tbody>
 </table>
+<p><code>grep -options 'pattern' file</code></p>
 </div>
-<div id="combining-commands" class="section level1">
-<h1>Combining commands</h1>
+<div id="combining-commands-example" class="section level1">
+<h1>Combining commands: example</h1>
 <p>• Let’s look at the file <code>examples/sequence.fasta</code><br />
-• print line 17 piping <code>head</code> and <code>tail</code><br />
-• Count lines starting with ‘&gt;’<br />
-• Count unique lines starting with ‘&gt;’</p>
+• print line 17 by piping <code>head</code> and <code>tail</code><br />
+• Count lines starting with ‘&gt;’ (pipe <code>grep</code> and <code>wc</code>) • Count unique lines starting with ‘&gt;’(pipe <code>grep</code>, <code>sort</code>, <code>uniq</code> and <code>wc</code>)</p>
 </div>
 <div id="install-and-run-command-line-programs" class="section level1">
 <h1>Install and run command line programs</h1>
 <p>• Let’s look at this example: <a href="https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl" class="uri">https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl</a><br />
-• It is a short <code>perl</code> script that greps sequences in a <em>.fasta</em> file<br />
-• Copy-paste the text in a new file (e.g. <code>touch fastagrep.pl</code>,<code>nano fastagrep.pl</code>,paste and save)<br />
-• Make it executable (<code>chmod +x</code>)<br />
+• It is a short <code>perl</code> script that greps sequences in a <em>.fasta</em> formatted file<br />
+• Copy-paste the text in a new file (e.g. <code>touch fastagrep.pl</code>,<code>nano fastagrep.pl</code>, paste and save)<br />
+• Make it executable (<code>chmod +x fastagrep.pl</code>)<br />
 • Let’s look at it (<code>./fastagrep.pl</code>)<br />
 • Let’s try it (<code>./fastagrep.pl 'deserticola' examples/sequence.fasta</code>)<br />
 • Let’s symbolic link it so the computer knows where to find it (<code>ln /Users/jerry/Dropbox/CSBQ/workshop/unix_workshop_2018/fastagrep.pl /usr/local/bin/fastagrep.pl</code>)</p>
 </div>
 <div id="bash" class="section level1">
 <h1>bash</h1>
-<p><code>bash</code> (let’s look at an example <code>less examples/bash_cmd2</code>)</p>
+<p>• let’s look at an example <code>less examples/bash_cmd2</code>)</p>
 </div>
 
 
