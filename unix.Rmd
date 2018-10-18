@@ -5,7 +5,7 @@ date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
   html_document:
     highlight: tango
-    number_sections: T
+    number_sections: F
     toc: yes
     toc_depth: 3
 ---
@@ -20,9 +20,9 @@ Command | Meaning
 `ls` | what's there
 `ls -1` | with an option 
 `ls -t -h` | with more options  
-`ls -thor` | with even more options
-`man ls` | what are the options (q = quit; d = next page; ; arrows = scrolling; h = list of all possible commands)  
-`pwd`| where are we  
+`ls -thor` | combining even more options
+`man ls` | manual: what are the options (q = quit; d = next page; ; arrows & fn arrows = scrolling)  
+`pwd`| where are we (full path)  
 `cd` | move somewhere else (default to home)   
 `cd ..` | move back  
 `cd ../Applications` | move back, then forward  
@@ -31,49 +31,75 @@ Command | Meaning
 
 #General principles  
 • All commands are short, perform simple tasks & are highly optimized (fast)  
+• Nearly all commands and options (~99%) work across Unix-based OS
 • Commands can take (many) options  
 • Commands can be combined (the pipe `|`)  
-• Many commands don't require any argument  
-• 'command' -option1 -option2 -optionN... parameter object  
+• Many commands don't require any argument, some do  
+• `command -option1 -option2 -optionN... parameter object`
+• Many commands write output to terminal (redirected using `>`)
 
-#The main commands
+#Moving / removing / creating files
 Command | Meaning
 ------------- | ----------------------------------------------------
-`echo` |Print message to screen  
-`cat` |Print file content to screen  
-`head` |Print first 10 lines to screen  
-`tail` |Print laste 10 lines to screen    
-`less` |Print file line by line (use arrows + fn arrows to move up/down)
-`sort`|Sort a file
-`uniq`|unique lines in a file  
-`clear` |clear terminal
-`mkdir` |create empty directory  
-`touch` |create empty file  
 `mv` |move  
 `cp` |copy  
 `rm` |careful remove  
 `rmdir` |*careful* remove empty directory  
-`rm -r` |*VERY careful*.. remove recursiveLY  
-`chmod` |change mode of file  
+`rm -r` |*VERY careful*.. remove recursively
+`mkdir` |create empty directory 
+`touch` |create empty file  
+`echo` |Print message to screen 
+
+#Examining files
+Command | Meaning
+------------- | ----------------------------------------------------
+`head` |Print first 10 lines to screen  
+`tail` |Print laste 10 lines to screen    
+`less` |Print file line by line (use arrows + fn arrows to move up/down)
+`cat` |Print file content to screen 
+`sort` |Sort a file
+`uniq` |unique lines in a file  
+`clear` |clear terminal
+`wc` |wordcount  
+
+#Tricks
+Command | Meaning
+------------- | ----------------------------------------------------
+`>` |the redirect
+`>>` |the redirect (append to file)
+`|` |the pipe   
+`*` |anything (special character: for literal `*`, use `\*`)  
+`?` |anyone character (special character)  
+`Ctrl+A` |go to beginning of line in terminal    
+`Ctrl+E` |end of line    
+`tab key`| autocomplete
+
+#Working remotely
+Command | Meaning
+------------- | ----------------------------------------------------
 `ssh` |secure shell (remote connection)  
 `scp`  |secure copy (remote connection)  
+
+#Others
+Command | Meaning
+------------- | ----------------------------------------------------
+`chmod` |change mode of file
 `sudo` |superuser do  
 `top` |who is running what?
 `kill` |kill a process   
-`wc` |wordcount
 `curl` |get stuff from web (MACOS native) or `wget` (MACOS non-native)  
 `history` |see recent history     
 `open` | open a file   
 `ln` | symbolic link  
-`which`|where is that command
-
-##Text editing
-Command | Meaning
-------------- | ----------------------------------------------------
+`which` |where is the command
+`alias` |create own commands 
 `nano` | edit text (whole file loaded in memory)      
 `nano +123` |specify location  
 
-##Compression
+##Profile
+• Let's look at .bash_profile to modify options (e.g. `nano ~/.bash_profile`)
+
+#Compression
 Command | Meaning
 ------------- | ----------------------------------------------------
 `gzip`  |compression/decompression of files  
@@ -82,34 +108,16 @@ Command | Meaning
 `tar`  |compression/decompression of archives  
 `tar -xvzf file tar.gz` |decompress a tar.gz (tarball)  
 
-##Regular expressions
+#Regular expressions
 Command | Meaning
 ------------- | ----------------------------------------------------
 `grep` -options 'pattern' file #regular expressions  
-
-#Tricks
-Command | Meaning
-------------- | ----------------------------------------------------
-`>` |the redirect  
-`|` |the pipe   
-`*` |anything (special character: for literal `*`, use `\*`)  
-`?` |anyone character (special character)  
-`Ctrl+A` |go to beginning of line in terminal    
-`Ctrl+E` |end of line    
-`tab key`| autocomplete
-`alias` |create own commands  
 
 #Combining commands
 • Let's look at the file `examples/sequence.fasta`  
 • print line 17 piping `head` and `tail`  
 • Count lines starting with '>'  
 • Count unique lines starting with '>'  
-
-#Profile
-• Let's look at .bash_profile  (e.g. `nano ~/.bash_profile`)     
-
-#More stuff
-`grep` -options 'pattern' file #regular expressions  
 
 #Install and run command line programs
 • Let's look at this example:   https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl  
