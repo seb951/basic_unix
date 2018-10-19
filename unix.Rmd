@@ -128,7 +128,8 @@ Command | Meaning
 • Let's look at the file `examples/sequence.fasta`  
 • print line 17 by piping `head` and `tail`  
 • Count lines starting with '>' (pipe `grep` and `wc`) 
-• Count unique lines starting with '>'(pipe `grep`, `sort`, `uniq` and `wc`) 
+• Count unique lines starting with '>' (pipe `grep`, `sort`, `uniq` and `wc`)   
+• How many files is there in the directory (pipe `ls` & `wc`)  
 
 ##Install and run command line programs
 • Let's look at this example:   https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl  
