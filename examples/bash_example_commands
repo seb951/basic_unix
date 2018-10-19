@@ -1,0 +1,20 @@
+###
+###handy aliases (seb: april 2014)
+###and october 2016
+alias sshb='ssh renaut@briaree.calculquebec.ca'
+alias sshc='ssh renaut@cedar.calculcanada.ca'
+alias l='ls -CFG'
+alias ls='ls -G'
+alias lsl='ls -GlaSh'
+alias lst='ls -Gthor'
+alias hg='history | grep'
+alias less='less -NS'
+alias du='du -csh'
+alias grep='grep --color=auto -n'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+###COLORS
+PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[0;30m\]'
+

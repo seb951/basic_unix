@@ -14,6 +14,14 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+#Get started
+• Open terminal  
+&nbsp;   
+![](examples/terminal.png){width=500px}  
+&nbsp;   
+• Download github repo (`wget https://github.com/seb951/basic_unix/archive/master.zip`)  
+• Decompress (`unzip master.zip`)  
+
 #Exploration
 Command | Meaning
 ------------- | ----------------------------------------------------
@@ -91,13 +99,14 @@ Command | Meaning
 `history` | see recent history     
 `open` | open a file   
 `ln` | symbolic link  
-`which` | where is the command
+`which` | where is a command
 `alias` | create own commands 
 `nano` | edit text (whole file loaded in memory)      
-`nano +123` | specify location  
+`nano +123` | specify location in file  
 
 #Profile
-• Let's look at .bash_profile to modify options (e.g. `nano ~/.bash_profile`)
+• Let's look at .bash_profile to modify options (e.g. `nano ~/.bash_profile`)  
+• Usefull options are here: `examples/bash_example_commands`
 
 #Compression
 Command | Meaning
@@ -111,26 +120,29 @@ Command | Meaning
 #Regular expressions
 Command | Meaning
 ------------- | ----------------------------------------------------
-`grep` | regular expressions  
-`grep -options 'pattern' file`  
+`grep` | regular expression  
+`grep -options 'pattern' file`  | regular expression   
 
-#Combining commands: example
+#Examples
+##Combining commands:   
 • Let's look at the file `examples/sequence.fasta`  
 • print line 17 by piping `head` and `tail`  
 • Count lines starting with '>' (pipe `grep` and `wc`) 
 • Count unique lines starting with '>'(pipe `grep`, `sort`, `uniq` and `wc`) 
 
-#Install and run command line programs
+##Install and run command line programs
 • Let's look at this example:   https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl  
-• It is a short `perl` script that greps sequences in a *.fasta* formatted file  
+• It is a short `perl` script that *greps* sequences in a *.fasta* formatted file  
 • Copy-paste the text in a new file (e.g. `touch fastagrep.pl`,`nano fastagrep.pl`, paste and save)   
 • Make it executable (`chmod +x fastagrep.pl`)    
 • Let's look at it (`./fastagrep.pl`)  
 • Let's try it (`./fastagrep.pl 'deserticola' examples/sequence.fasta`)  
-• Let's symbolic link it so the computer knows where to find it (` ln /Users/jerry/Dropbox/CSBQ/workshop/unix_workshop_2018/fastagrep.pl /usr/local/bin/fastagrep.pl`)  
+• Let's symbolic link it so the computer knows where to find it (` ln /Users/jerry/master_basic_unix/fastagrep.pl /usr/local/bin/fastagrep.pl`)  
   
-#bash
+##bash
 • let's look at an example `less examples/bash_cmd2`
 
-
+&nbsp;   
+&nbsp;   
+&nbsp;   
 
