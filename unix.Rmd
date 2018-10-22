@@ -10,10 +10,6 @@ output:
     toc_depth: 3
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 #Get started
 • Open terminal  
 &nbsp;   
