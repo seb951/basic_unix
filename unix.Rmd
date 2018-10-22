@@ -16,7 +16,8 @@ output:
 ![](examples/terminal.png){width=500px}  
 &nbsp;   
 • Download github repo (`curl -L https://github.com/seb951/basic_unix/archive/master.zip >master.zip`)  
-• Decompress (`unzip master.zip`)  
+• Decompress it (`unzip master.zip`)  
+• It contains a few examples + .pdf version of tutorial   
 
 #General principles    
 • All commands are short, perform simple tasks & are highly optimized (fast)  
