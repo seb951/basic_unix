@@ -19,9 +19,18 @@ knitr::opts_chunk$set(echo = TRUE)
 &nbsp;   
 ![](examples/terminal.png){width=500px}  
 &nbsp;   
-• Download github repo (`wget https://github.com/seb951/basic_unix/archive/master.zip`)  
+• Download github repo (`curl -L https://github.com/seb951/basic_unix/archive/master.zip >master.zip`)  
 • Decompress (`unzip master.zip`)  
 
+#General principles    
+• All commands are short, perform simple tasks & are highly optimized (fast)  
+• Nearly all commands and options (~99%) work across Unix-based OS  
+• Commands can take (many) options  
+• Commands can be combined (see more later)  
+• Many commands don't require any argument, some do  
+• `command -option1 -option2 -optionN... parameter object`  
+• Many commands output directly to terminal  
+  
 #Exploration
 Command | Meaning
 ------------- | ----------------------------------------------------
@@ -37,23 +46,14 @@ Command | Meaning
 `cd ~ ` | move home 
 `cd /` | move to root    
 
-#General principles  
-• All commands are short, perform simple tasks & are highly optimized (fast)  
-• Nearly all commands and options (~99%) work across Unix-based OS  
-• Commands can take (many) options  
-• Commands can be combined (more later)  
-• Many commands don't require any argument, some do  
-• `command -option1 -option2 -optionN... parameter object`  
-• Many commands output directly to terminal  
-
 #Moving / removing / creating files
 Command | Meaning
 ------------- | ----------------------------------------------------
 `mv` | move  
 `cp` | copy  
-`rm` | **careful** remove  
-`rmdir` | **careful** remove empty directory  
-`rm -r` | **VERY careful**.. remove recursively
+`rm` | **careful** remove a file 
+`rmdir` | **careful** remove an empty directory  
+`rm -r` | **VERY careful** remove directory recursively
 `mkdir` | create empty directory 
 `touch` | create empty file  
 `echo` | print message to screen 
@@ -69,6 +69,7 @@ Command | Meaning
 `uniq` | unique lines in a file  
 `clear` | clear terminal
 `wc` | wordcount  
+`du` | disk usage  
 
 #Tricks
 Command | Meaning
@@ -127,21 +128,24 @@ Command | Meaning
 ##Combining commands:   
 • Let's look at the file `examples/sequence.fasta`  
 • print line 17 by piping `head` and `tail`  
-• Count lines starting with '>' (pipe `grep` and `wc`) 
+• Count lines starting with '>' (pipe `grep` and `wc`)   
 • Count unique lines starting with '>' (pipe `grep`, `sort`, `uniq` and `wc`)   
 • How many files is there in the directory (pipe `ls` & `wc`)  
 
 ##Install and run command line programs
 • Let's look at this example:   https://github.com/rec3141/rec-genome-tools/blob/master/bin/fastagrep.pl  
-• It is a short `perl` script that *greps* sequences in a *.fasta* formatted file  
+• Notice the `!#` (shebang) on the first line  
+• It is a short `perl` script that *greps* sequences in a *.fasta* formatted file    
 • Copy-paste the text in a new file (e.g. `touch fastagrep.pl`,`nano fastagrep.pl`, paste and save)   
 • Make it executable (`chmod +x fastagrep.pl`)    
 • Let's look at it (`./fastagrep.pl`)  
 • Let's try it (`./fastagrep.pl 'deserticola' examples/sequence.fasta`)  
-• Let's symbolic link it so the computer knows where to find it (` ln /Users/jerry/master_basic_unix/fastagrep.pl /usr/local/bin/fastagrep.pl`)  
+• Let's symbolic link it so the computer knows where to find it (` ln source target`)  
   
 ##bash
-• let's look at an example `less examples/bash_cmd2`
+• The terminal runs (by default) the `bash` command language  
+• We can write or use more complex executable `bash` code  
+• Let's look at an example `less examples/bash_cmd2`
 
 &nbsp;   
 &nbsp;   
