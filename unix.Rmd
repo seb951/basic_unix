@@ -94,7 +94,7 @@ Command | Meaning
 `top` | what's running 
 `kill` | kill a process   
 `curl` | get stuff from web (MACOS native) or `wget` (MACOS non-native)  
-`history` | see recent history     
+`history` | see recent history (use `!` with nb to use previous cmd)    
 `open` | open a file   
 `ln` | symbolic link  
 `which` | where is a command
