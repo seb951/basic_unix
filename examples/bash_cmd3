@@ -1,0 +1,25 @@
+#!/cvmfs/soft.computecanada.ca/nix/var/nix/profiles/16.09/bin/bash
+
+#load module
+module load bowtie2
+
+#go to right wd
+cd /scratch/renaut/ATRAPP/ATRAPP_Champlain_2016_Metat/all
+
+#for loop
+for fastq in `ls ../St1/dolicho/*fastq|head -2`
+	do
+		#out
+		bowbam=`echo $fastq|awk -F "fastq" '{print $1 "bowbam"}'`
+
+		#checks
+		echo $fastq
+		echo $bowbam
+
+		#bowtie alignment
+#		bowtie2 -p 2 -x dolicho/trinity/dolicho_reference_transcriptome $fastq -S $bowbam
+	done
+
+
+var="Hello punks"
+echo $var
