@@ -22,7 +22,7 @@ output:
 #General principles    
 • All commands are short, perform simple tasks & are highly optimized (fast)  
 • Nearly all commands and options (~99%) work across Unix-based OS  
-• Commands can take (many) options  
+• Commands can take (many/few) arguments/options  
 • Commands can be combined (see more later)  
 • Many commands don't require any argument, some do  
 • `command -option1 -option2 -optionN... parameter object`  
